@@ -4,11 +4,13 @@ import Paginacion from './Paginacion'
 
 class Resultado extends Component {
 
+    componentDidUpdate(){
+        console.log(this.props.imagenes);
+    }
     mostrarImagens=()=>{
 
         const imagenes=this.props.imagenes;
         if (imagenes.length === 0)return null;
-
         return (
             <React.Fragment>
                 <div className="col-12 p-5 row">
@@ -31,7 +33,7 @@ class Resultado extends Component {
             <React.Fragment>
                 {this.mostrarImagens()}
             </React.Fragment>
-        );
+        )
     }
 }
 

@@ -18,14 +18,9 @@ scroll=()=>{
 }
 
 paginaAnterior=()=>{
-  //Leer el state de la pagina actual 
   let pagina=this.state.pagina;
-  //leer si la pagina es 1 no quiero leer mas
   if(pagina===1) return null;
-
-  //sumar uno a la pagina actual
   pagina--;
-  //agregar el cambio al state
   this.setState({
     pagina:pagina
   },()=>{
@@ -33,17 +28,13 @@ paginaAnterior=()=>{
     this.scroll()})
 }
 paginaSiguiente=()=>{
-  //Leer el state de la pagina actual 
   let pagina=this.state.pagina;
-  //sumar uno a la pagina actual
   pagina++;
-  //agregar el cambio al state
   this.setState({
     pagina:pagina
   },()=>{
     this.consultarApi();
     this.scroll()})
-  
 }
 
 consultarApi=()=>{
